@@ -1,0 +1,11 @@
+<div>
+
+	<input [(ngModel)]="u" (ngModelChange)="searchbyName($event)">
+</div>
+	<br>
+	<button (click)="fetchMovie()"> Search </button>
+
+	<div *ngFor="let item of moviesList; let i = index">
+		{{item.Title}} <br>
+
+		<div>
