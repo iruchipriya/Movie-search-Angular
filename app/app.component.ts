@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { MovieService } from "./movie.service";
+// import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: "my-app",
@@ -9,6 +10,7 @@ import { MovieService } from "./movie.service";
 export class AppComponent implements OnInit {
   movieName: string = "";
   moviesList: [];
+  // faStar = faStar;
   constructor(private movieService: MovieService) {}
   ngOnInit() {
     // this.fetchMovie();

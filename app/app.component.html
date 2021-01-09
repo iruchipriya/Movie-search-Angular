@@ -1,11 +1,39 @@
-<div>
+<div style="background-color:#000000; min-height:100vh">
+	<div>
+		<div class="container">
+			<div class="row" style="padding-top: 20px;">
+				<div class=" col-lg-7" style="padding-right:0px;">
+					<input placeholder="Search movies here..." [(ngModel)]="u" (ngModelChange)="searchbyName($event)" style="float:right; height :38px; width: 70%" >
+          </div>
 
-	<input [(ngModel)]="u" (ngModelChange)="searchbyName($event)">
-</div>
-	<br>
-	<button (click)="fetchMovie()"> Search </button>
-
-	<div *ngFor="let item of moviesList; let i = index">
-		{{item.Title}} <br>
+					<div class="col-lg-5" style="height :38px; padding-left: 0px;">
+						<button type="button" class="btn btn-warning" (click)= "fetchMovie()">Search</button>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<div>
+			<div class="container">
+				<div class="row">
+					<div *ngFor="let item of moviesList; let i = index" class="col-lg-3"
+						style="background-color: white; width :190px ; margin: 20px; padding :10px;">
+						<div class="card" style="width: 16rem; margin:auto">
+							<img class="card-img-top" src={{item.Poster}} alt="Card image cap" style = "height : 250px">
+							<div class="card-body">
+								<i class="bi-star-fill" style="font-size: 1.5rem; color: #F5C518;"></i>
+								{{(item.imdbID).slice(-2)/10}}
+								<br>
+								<h5 class="card-title">{{item.Title}}</h5>
+								<!-- <p class="card-text">Some quick example text to build on the card title and make up the
+								bulk of the card's content.</p> -->
+
+								<br>
+								<button type="button" class="btn btn-primary btn-lg btn-block">Add to wishlist</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>

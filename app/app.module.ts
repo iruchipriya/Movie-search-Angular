@@ -5,6 +5,7 @@ import { AppComponent } from "./app.component";
 import { HelloComponent } from "./hello.component";
 import { HttpClientModule } from "@angular/common/http";
 import { MovieService } from "./movie.service";
+// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   imports: [BrowserModule, FormsModule, HttpClientModule],
   declarations: [AppComponent, HelloComponent],
